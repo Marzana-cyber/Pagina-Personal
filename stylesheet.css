@@ -58,9 +58,11 @@ body {
     width: 100%;
     justify-content: space-between;
     height: 100vh;
-    background: url('img/img5.jpeg') no-repeat;
-    background-size: cover;
-    background-position: center;
+    background-color: #1e1e1e;
+    background: url("img/img9.jpeg");
+    background-repeat: no-repeat;
+    background-size: 40%;
+    background-position: right center;
     display: flex;
     align-items: center;
     padding: 70px 10% 0;
@@ -305,6 +307,7 @@ section{
     animation: showText 0.5s 1s linear forwards;
     opacity: 0;
 }
+
 .Technical-bars .bar .progress-line{
     position: relative;
     border-radius: 10px;
@@ -315,10 +318,12 @@ section{
     transform: scaleX(0);
     transform-origin: left;
 }
+
 @keyframes animate{
     100%{
         transform: scaleX(1);
     }
+    
 }
 .Technical-bars .bar .progress-line span{
     height: 100%;
@@ -330,15 +335,19 @@ section{
     transform-origin: left;
 }
 .progress-line.html span{
-    width: 90%;
+    width: 15%;
 }
 
 .progress-line.css span{
-    width: 60%;
+    width: 10%;
 }
 
-.progress-line.javascript span{
-    width: 85%;
+.progress-line.c span{
+    width: 25%;
+}
+
+.progress-line.java span{
+    width: 25;
 }
 
 .progress-line span::after{
@@ -354,19 +363,16 @@ section{
     opacity: 0;
 }
 .progress-line.html span::after{
-    content: "90%";
+    content: "15%";
 }
 .progress-line.css span::after{
-    content: "60%";
+    content: "10%";
 }
-.progress-line.javascript span::after{
-    content: "85%";
+.progress-line.c span::after{
+    content: "25%";
 }
-.progress-line.python span::after{
-    content: "90%";
-}
-.progress-line.react span::after{
-    content: "90%";
+.progress-line.java span::after{
+    content: "25%";
 }
 .progress-line span::before{
     content: "";
