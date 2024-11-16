@@ -451,13 +451,14 @@ section{
     opacity: 0;
 }
 .main-text{
-    padding-top: 130px;
-    margin-top: 200px;
+    padding-top: 50px;
+    margin-top: 0px;
 }
 
 .main-text h2 {
+    margin: 0;
     font-size: 60px;
-    line-height: 1;
+    line-height: 1.2;
     text-align: center;
 }
 .main-text h2 span {
@@ -466,6 +467,7 @@ section{
 .portafolio-content{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(359px, auto));
+    grid-gap: 20px;
 }
 .row{
     position: relative;
@@ -474,6 +476,7 @@ section{
     cursor: pointer;
 }
 .row img{
+    margin: 0;
     width: 100%;
     border-radius: 8px;
     display: block;
@@ -665,9 +668,6 @@ section{
     border-radius: 0.5rem;
 }
 
-
-
-
 @keyframes slideRight {
     0% {
         transform: translateX(-100px);
@@ -713,5 +713,410 @@ section{
     100% {
         transform: translateY(0px);
         opacity: 1;
+    }
+}
+/* Oculta el botón de menú en pantallas grandes */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 30px;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* Estilos para el menú en pantallas pequeñas */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .navbar {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background-color: #051129;
+        width: 100%;
+        z-index: 99;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .navbar.active {
+        display: flex;
+    }
+
+    .navbar a {
+        margin: 10px 0;
+        text-align: center;
+    }
+}
+/* Diseño responsive */
+@media (max-width: 768px) {
+    .contactos {
+        display: block; /* Cambia la disposición a vertical */
+        text-align: center;
+        padding: 0 15px; /* Ajusta el espaciado lateral */
+    }
+
+    .contactos-text {
+        margin-bottom: 2rem;
+    }
+
+    .contactos-form {
+        margin: 0 auto;
+        width: 100%; /* Asegúrate de que ocupe todo el ancho disponible */
+    }
+
+    .contactos-form form input,
+    .contactos-form form textarea {
+        width: 100%; /* Inputs y textarea ocupan el ancho completo */
+        margin: 10px 0; /* Espaciado entre campos */
+    }
+
+    .contactos-list {
+        margin-bottom: 2rem; /* Ajusta el espacio con los demás elementos */
+    }
+}
+
+
+/* Estilos responsivos para pantallas muy pequeñas (320px - 480px) */
+@media (max-width: 480px) {
+    .home-content h1 {
+        font-size: 32px; /* Aún más pequeño para móviles */
+    }
+
+    .home-content h3 {
+        font-size: 20px; /* Reduce el texto */
+    }
+
+    .btn-box {
+        padding: 10px 20px; /* Ajusta el botón */
+        font-size: 14px; /* Reduce el tamaño de la fuente */
+    }
+
+    .about-text h2 {
+        font-size: 28px; /* Ajusta los títulos */
+    }
+
+    .about-text h4 {
+        font-size: 14px; /* Ajusta subtítulos */
+    }
+}
+@media (max-width: 768px) {
+    /* Reducir tamaño en sección Contactos */
+    .contactos-text h2 {
+        font-size: 50px; /* Reducido de 90px */
+    }
+
+    .contactos-text h4,
+    .contactos-text p {
+        font-size: 16px; /* Reducido de 20px */
+    }
+}
+/* Estilo general para la sección de conocimientos */
+.container {
+    padding: 90px;
+}
+
+.services-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(259px, 1fr));
+    grid-gap: 40px;
+    margin-top: 50px;
+}
+
+.services-list div {
+    background-color: transparent;
+    padding: 40px;
+    font-size: 13px;
+    font-weight: 13px;
+    border: 1px solid rgba(0, 0, 255, 0.3); /* Borde delgado azul */
+    border-radius: 20px;
+    box-shadow: 1px 1px 20px #012290f7,
+                1px 1px 40px #0053b8f7; /* Sombra azul */
+    transition: background 0.5s, transform 0.5s;
+}
+
+.services-list div i {
+    font-size: 50px;
+    margin-bottom: 30px;
+}
+
+.services-list div h2 {
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.services-list div a {
+    text-decoration: none;
+    color: #000000;
+    font-size: 12px;
+    margin-top: 20px;
+    display: inline-block;
+}
+
+.read {
+    display: inline-block;
+    padding: 12px 28px;
+    background: #0ef;
+    border-radius: 40px;
+    font-size: 16px;
+    color: #081b29;
+    letter-spacing: 1px;
+    text-decoration: none;
+    font-weight: 600;
+    opacity: 0;
+    animation: slideTop 1s ease forwards;
+    animation-delay: 2s;
+    box-shadow: 0 0 5px #0ef,
+        0 0 25px #0ef;
+}
+
+.read:hover {
+    box-shadow: 0 0 5px cyan,
+                0 0 25px cyan, 0 0 50px cyan,
+                0 0 100px cyan, 0 0 200px cyan;
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 768px) {
+    .container {
+        padding: 40px; /* Reducir padding para pantallas pequeñas */
+    }
+
+    /* Ajustar los elementos de la lista de servicios */
+    .services-list {
+        display: flex;
+        flex-direction: column; /* Disposición en columna */
+        align-items: flex-start; /* Alinear a la izquierda */
+        gap: 20px; /* Espacio entre los elementos */
+    }
+
+    /* Estilo de cada elemento en la lista de servicios */
+    .services-list div{
+        background-color: transparent;
+        padding: 40px;
+        font-size: 13px;
+        font-weight: 13px;
+        border-right: 10px;
+        border-radius: 20px;
+        transition: background 0.5s, transform 0.5s;
+        box-shadow: 1px 1px 20px #012290f7,
+                  1px 1px 40px #0053b8f7
+    }
+
+    /* Iconos dentro de cada item */
+    .services-list div i {
+        font-size: 40px; /* Reducir el tamaño de los iconos */
+        margin-bottom: 20px; /* Ajustar espacio entre icono y texto */
+    }
+
+    /* Títulos dentro de cada item */
+    .services-list div h2 {
+        font-size: 22px; /* Reducir tamaño del título */
+        font-weight: 500;
+        margin-bottom: 10px; /* Reducir margen inferior */
+    }
+
+    /* Enlaces dentro de cada item */
+    .services-list div a {
+        font-size: 14px; /* Ajustar tamaño del texto */
+        margin-top: 15px; /* Reducir el margen superior */
+    }
+
+    /* Ajustar el título de la sección */
+    .sub-title {
+        font-size: 36px; /* Reducir el tamaño del título */
+        text-align: center; /* Alinear título a la izquierda */
+    }
+
+    /* Ajustes del botón 'leer más' */
+    .read {
+        padding: 10px 25px; /* Reducir el tamaño del botón */
+        font-size: 14px; /* Ajustar el tamaño del texto */
+    }
+
+    /* Efecto hover en el botón 'leer más' */
+    .read:hover {
+        box-shadow: 0 0 5px cyan,
+                    0 0 25px cyan,
+                    0 0 50px cyan,
+                    0 0 100px cyan,
+                    0 0 200px cyan;
+    }
+}
+/* Media Queries para responsive */
+@media (max-width: 768px) {
+    /* Centrar el contenedor y ajustarlo al ancho */
+    .container1 {
+        width: 100%;
+        height: auto;
+        padding: 20px;
+        margin-left: 0;
+    }
+
+    .heading1 {
+        margin-bottom: 20px;
+    }
+
+    /* Centrar el contenido en el responsive */
+    .Technical-bars {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Ajustar el tamaño de las barras */
+    .bar {
+        width: 90%; /* Ajustar el tamaño para pantallas pequeñas */
+        margin-bottom: 20px;
+    }
+
+    .progress-line {
+        width: 100%; /* Asegurarse de que las barras sean del 100% del contenedor */
+    }
+
+    /* Ajustar el tamaño de las letras */
+    .bar i {
+        font-size: 40px;
+    }
+
+    .bar .info span {
+        font-size: 14px;
+    }
+
+    .progress-line span::after {
+        font-size: 10px;
+    }
+}
+/* Media query para pantallas pequeñas (tabletas y móviles) */
+@media (max-width: 768px) {
+    .main-text h2 {
+        font-size: 40px; /* Reducir el tamaño del título */
+    }
+
+    .portafolio-content {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Dos proyectos por fila */
+    }
+
+    .layer h5 {
+        font-size: 18px; /* Reducir el tamaño del título del proyecto */
+    }
+
+    .layer p {
+        font-size: 14px; /* Reducir el tamaño del texto */
+    }
+
+    .layer i {
+        font-size: 18px; /* Reducir el tamaño del icono */
+        width: 50px;
+        height: 50px;
+    }
+}
+
+/* Media query para pantallas muy pequeñas (móviles) */
+@media (max-width: 480px) {
+    .main-text h2 {
+        font-size: 30px; /* Reducir aún más el tamaño del título */
+    }
+
+    .portafolio-content {
+        grid-template-columns: 1fr; /* Solo un proyecto por fila */
+    }
+
+    .layer h5 {
+        font-size: 16px; /* Reducir el tamaño del título */
+    }
+
+    .layer p {
+        font-size: 12px; /* Reducir el tamaño del texto */
+    }
+
+    .layer i {
+        font-size: 16px; /* Reducir el tamaño del icono */
+        width: 40px;
+        height: 40px;
+    }
+}
+@media (max-width: 768px) {
+    .about {
+        display: grid;
+        grid-template-columns: 1fr; /* Disposición en columna */
+    }
+
+    /* Centrar el título "AcercaDeMi" */
+    .about-text h2 {
+        font-size: 36px;
+        text-align: center; /* Centrar el título */
+    }
+
+    /* Alinear el texto debajo del título hacia la izquierda */
+    .about-text h4, .about-text p {
+        text-align: left; /* Alinear texto a la izquierda */
+        margin-bottom: 5px;
+    }
+
+    .about-text p {
+        text-align: left; /* alinear a la izquierda */
+    }
+
+    /* El botón "Más sobre mí" centrado */
+    .about-text .btn-box {
+        display: inline-block;
+        margin-top: 20px;
+        text-align: center; /* Centrar el botón */
+    }
+
+    /* Centrar la imagen */
+    .about-img img {
+        width: 100%;
+        max-width: 100%;
+        padding-bottom: 0;
+        border-radius: 8px;
+    }
+
+    /* Colocar el texto arriba de la imagen */
+    .about-text {
+        order: 2; /* El texto va arriba */
+    }
+
+    .about-img {
+        order: 1; /* La imagen va abajo */
+    }
+}
+@media (max-width: 768px) {
+    /* Más espacio para la parte verdecita */
+    .home-content {
+        padding-top: 10px;
+        margin-bottom: 5px; /* Añade más espacio hacia abajo */
+    }
+
+    /* Reubicar la imagen */
+    .home {
+        flex-direction: column; /* Cambia a columna en responsive */
+        height: auto; /* Ajusta el alto */
+        background: none; /* Quita el fondo para que no repita */
+    }
+
+    .home::before {
+        content: '';
+        background: url("img/img9.jpeg") no-repeat center center / cover;
+        display: block;
+        width: 250px;
+        height: 300px;
+        border-radius: 50%; /* Haz la imagen circular */
+        margin: 0 auto; /* Espacio entre la imagen y texto */
+    }
+
+    .home-content h1 {
+        text-align: center; /* Centra el texto si es necesario */
+        margin: 0;
+    }
+    .home-content h2 {
+        text-align: center; /* Centra subtítulos */
+        margin-top: 0; /* Ajusta espacio superior */
     }
 }
