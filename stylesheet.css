@@ -336,11 +336,11 @@ section{
     transform-origin: left;
 }
 .progress-line.html span{
-    width: 25%;
+    width: 10%;
 }
 
 .progress-line.css span{
-    width: 20%;
+    width: 10%;
 }
 
 .progress-line.c span{
@@ -364,10 +364,10 @@ section{
     opacity: 0;
 }
 .progress-line.html span::after{
-    content: "25%";
+    content: "10%";
 }
 .progress-line.css span::after{
-    content: "20%";
+    content: "10%";
 }
 .progress-line.c span::after{
     content: "55%";
