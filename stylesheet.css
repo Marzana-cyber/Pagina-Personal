@@ -191,6 +191,8 @@ body {
     font-size: 20px;
     line-height: 1.4;
     margin-bottom: 4rem;
+    text-align: justify; 
+    padding-right: 40px; 
 }
 
 #services{
@@ -1055,12 +1057,22 @@ section{
 
     /* Alinear el texto debajo del título hacia la izquierda */
     .about-text h4, .about-text p {
-        text-align: left; /* Alinear texto a la izquierda */
         margin-bottom: 5px;
+        padding-left: 15px;
+        padding-right: 15px;
+
     }
 
     .about-text p {
-        text-align: left; /* alinear a la izquierda */
+        text-align: left; 
+
+    }
+
+    .about-text {
+        display: flex; /* Usar flexbox para el contenedor */
+        flex-direction: column;
+        align-items: center; /* Centrar el contenido */
+        justify-content: center; /* Asegurarse de que todo esté centrado */
     }
 
     /* El botón "Más sobre mí" centrado */
